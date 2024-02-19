@@ -25,6 +25,8 @@ document.querySelectorAll('.kbd').forEach(seat => {
   });
 });
 
+
+// // Coupon Code Section
 const apply = document.getElementById('apply-btn');
 
 apply.addEventListener('click', function (e) {
@@ -53,23 +55,6 @@ apply.addEventListener('click', function (e) {
   }
 });
 
-// // Coupon Code Section
-// document.querySelector('.btn').addEventListener('click', () => {
-//   const couponInput = document.querySelector('input').value;
-//   if (couponInput === 'NEW15' || couponInput === 'Couple 20') {
-//     const discount = couponInput === 'NEW15' ? totalPrice * 0.15 : totalPrice * 0.2;
-//     grandTotal = totalPrice - discount;
-//     document.querySelector(
-//       '.grand-total span'
-//     ).textContent = `BDT ${grandTotal}:00`;
-//     document.querySelector('.discount').style.display = 'none';
-//   }
-// });
-
-// function hideElementById(elementId) {
-//   const element = document.getElementById(elementId);
-//   element.classList.add('hidden');
-// }
 
 // // Seat Count and Left
 let count = 0;
