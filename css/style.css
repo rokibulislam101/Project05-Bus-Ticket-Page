@@ -1,0 +1,12 @@
+.banner{
+      background-image: url('../images/banner.png');
+}
+.kbd{
+      width: 20%;
+      height: 50px;
+}
+
+
+.seat {
+      cursor: pointer;
+}
