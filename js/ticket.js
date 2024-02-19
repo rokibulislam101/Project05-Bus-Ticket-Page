@@ -26,36 +26,6 @@ document.querySelectorAll('.kbd').forEach(seat => {
 });
 
 
-// // Coupon Code Section
-const apply = document.getElementById('apply-btn');
-
-apply.addEventListener('click', function (e) {
-  const couponElement = document.getElementById('coupon').value;
-  const totalTicketPrice = document.getElementById('total-price').innerText;
-  const totalTicketPriceNumber = parseInt(totalTicketPrice);
-
-  if (totalPrice === 2200) {
-    if (couponElement === 'NEW15') {
-      const grandTotalElement = document.getElementById('grand-total');
-      const discount = totalTicketPriceNumber * 0.15;
-      const grandTotal = totalTicketPriceNumber - discount;
-      grandTotalElement.innerText = `BDT ${grandTotal}:00`;
-      hideElementById('coupon-area');
-    } else if (couponElement === 'Couple20') {
-      const grandTotalElement = document.getElementById('grand-total');
-      const discount = totalTicketPriceNumber * 0.2;
-      const grandTotal = totalTicketPriceNumber - discount;
-      grandTotalElement.innerText = `BDT ${grandTotal}:00`;
-      hideElementById('coupon-area');
-    } else {
-      alert('Invalid Coupon');
-    }
-  } else {
-    alert('Please select 4 seats');
-  }
-});
-
-
 // // Seat Count and Left
 let count = 0;
 let countLess = 40;
@@ -72,6 +42,45 @@ for (const btn of allBtn) {
     }
   });
 }
+
+
+// // Coupon Code Section
+const apply = document.getElementById('apply-btn');
+
+apply.addEventListener('click', function (e) {
+  const couponElement = document.getElementById('coupon').value;
+
+  // const couponCode = couponElement.split(" ").join("").toUpperCase();
+
+  const totalTicketPrice = document.getElementById('total-price').innerText;
+  const totalTicketPriceNumber = parseInt(totalTicketPrice);
+  if (totalTicketPriceNumber == 2200) {
+    if (couponElement === 'NEW15') {
+      const grandTotalElement = document.getElementById('grand-total');
+      const discount = totalTicketPriceNumber * 0.15;
+      const grandTotal = totalTicketPriceNumber - discount;
+
+      grandTotalElement.innerText = grandTotal.toFixed(2);
+      hideElementById('coupon-area');
+    } else if (couponElement === 'Couple 20') {
+      const grandTotalElement = document.getElementById('grand-total');
+      const discount = totalTicketPriceNumber * 0.2;
+      const grandTotal = totalTicketPriceNumber - discount;
+      // console.log(couponCode)
+      grandTotalElement.innerText = grandTotal.toFixed(2);
+      hideElementById('coupon-area');
+    } else {
+      alert('Invalid Coupon');
+    }
+  } else {
+    alert('Please select 4 seats');
+  }
+});
+
+function setInnerText(id, value) {
+  document.getElementById(id).innerText = value;
+}
+
 
 // Get the modal element open and close
 const modal = document.getElementById('my_modal_1');
